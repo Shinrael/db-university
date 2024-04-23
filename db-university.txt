@@ -1,0 +1,48 @@
+SOLUZIONE 1
+
+SELECT * 
+FROM `students` 
+WHERE YEAR(`date_of_birth`) = 1990
+
+SOLUZIONE 2
+
+SELECT * 
+FROM `courses` 
+WHERE `cfu` > 10
+
+SOLUZIONE 3
+
+SELECT * 
+FROM `students` 
+WHERE `date_of_birth` <= '1994-01-01'
+
+SOLUZIONE 4
+
+SELECT * 
+FROM `courses` 
+WHERE `period` = 'I semestre'
+AND `year`= 1
+
+SOLUZIONE 5 
+
+SELECT * 
+FROM `exams` 
+WHERE `hour`>= '14:00:00'
+AND `date`='2020-06-20'
+
+SOLUZIONE 6
+
+SELECT * 
+FROM `degrees` 
+WHERE `name` LIKE 'corso di laurea magistrale%'
+
+SOLUZIONE 7
+
+SELECT COUNT(*) as `numero_dipartimenti`
+FROM `departments` 
+
+SOLUZIONE 8
+
+SELECT * 
+FROM `teachers` 
+WHERE `phone`IS NOT NULL
