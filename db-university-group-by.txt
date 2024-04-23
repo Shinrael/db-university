@@ -1,0 +1,21 @@
+SOLUZIONE 1
+
+SELECT COUNT(*) AS `numero_iscritti`, YEAR(`enrolment_date`) AS `anno`
+FROM `students` 
+GROUP BY `anno`
+
+SOLUZIONE 2
+
+SELECT COUNT(*) AS `numero_insegnanti`, `office_address` AS `edificio`
+FROM `teachers` 
+GROUP BY `edificio`
+
+SOLUZIONE 3
+
+SELECT AVG(`vote`) AS `media_voto`, `exam_id` AS `appello_esame`
+FROM `exam_student` 
+GROUP BY `appello_esame`
+ORDER by `appello_esame`
+
+SOLUZIONE 4
+
