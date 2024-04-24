@@ -14,7 +14,7 @@ SOLUZIONE 3
 
 SELECT * 
 FROM `students` 
-WHERE `date_of_birth` <= '1994-01-01'
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE())>30
 
 SOLUZIONE 4
 
@@ -45,4 +45,4 @@ SOLUZIONE 8
 
 SELECT * 
 FROM `teachers` 
-WHERE `phone`IS NOT NULL
+WHERE `phone`IS NULL

@@ -18,4 +18,6 @@ GROUP BY `appello_esame`
 ORDER by `appello_esame`
 
 SOLUZIONE 4
-
+SELECT COUNT(*) AS `corsi_dipartimento`, `department_id` AS `dipartimento` 
+FROM `degrees` 
+GROUP BY `dipartimento`
