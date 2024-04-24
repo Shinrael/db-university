@@ -19,3 +19,42 @@ WHERE
     `degrees`.`name` LIKE 'corso di laurea magistrale%' AND `departments`.`name` = 'dipartimento di neuroscienze'
 
 SOLUZIONE 3
+
+SELECT
+    `teachers`.`name`,
+    `teachers`.`surname`,
+    `courses`.`name` AS `nome_corso`,
+    `courses`.`description` AS `descrizione_corso`
+FROM
+    `teachers`
+INNER JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
+INNER JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+WHERE
+    `teachers`.`id` = 44
+
+SOLUZIONE 4
+
+SELECT
+    `students`.`surname`,`students`.`name`,`degrees`.`name`,`degrees`.`level`,`departments`.`name`
+FROM
+    `students`
+INNER JOIN `degrees` ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments` ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY `students`.`surname`, `students`.`name`
+
+SOLUZIONE 5
+
+SELECT
+    `degrees`.`name`,
+    `courses`.`name`,
+    `courses`.`description`,
+    `teachers`.`surname` AS `cognome_insegnante`,
+    `teachers`.`name` AS `nome_insegnante`
+FROM
+    `degrees`
+INNER JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id`
+INNER JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
+INNER JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`
+ORDER BY `degrees`.`name`
+
+SOLUZIONE 6
