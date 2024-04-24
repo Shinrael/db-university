@@ -1,0 +1,21 @@
+SOLUZIONE 1 
+
+SELECT
+    `students`.`name`,`students`.`surname`,`students`.`degree_id`,`degrees`.`id`,`degrees`.`name`
+FROM
+    `students`
+INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = 'Corso di laurea in economia'    
+
+SOLUZIONE 2
+
+SELECT
+    `degrees`.`name` AS `nome_corso`,
+    `departments`.`name` AS `dipartimento`
+FROM
+    `degrees`
+INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+WHERE
+    `degrees`.`name` LIKE 'corso di laurea magistrale%' AND `departments`.`name` = 'dipartimento di neuroscienze'
+
+SOLUZIONE 3
